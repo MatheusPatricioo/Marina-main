@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namora comigo?</title>
+    <!-- Link para o arquivo de estilo externo -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        /* Estilos adicionais diretamente no HTML */
+        .btn {
+            width: 100px;
+            height: 50px;
+            background-color: rgb(255, 62, 197);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="conteudo">
+        <!-- Pergunta 2 - exibida inicialmente -->
+        <div id="pergunta2" style="display: block;">
+            <h2>Você prefere massa ou sushi?</h2>
+            <div class="opcoes">
+                <!-- Botões para escolher entre massa e sushi -->
+                <button class="btn" onclick="pergunta2Respondida('massa')">Massa</button>
+                <button class="btn" onclick="pergunta2Respondida('sushi')">Sushizinho</button>
+            </div>
+        </div>
+        <!-- Pergunta 1 -->
+        <div id="pergunta1" style="display: none;">
+            <h2>Gosta mais de sair de dia ou de noite?</h2>
+            <div class="opcoes">
+                <!-- Botões para escolher entre dia e noite -->
+                <button class="btn" onclick="pergunta1Respondida('dia')">Dia</button>
+                <button class="btn" onclick="pergunta1Respondida('noite')">Noite</button>
+            </div>
+        </div>
+        <!-- Pergunta 3 -->
+        <div id="pergunta3" style="display: none;">
+            <h2>Um beijinho meu ou um presente misterioso?</h2>
+            <div class="opcoes">
+                <!-- Botões para escolher entre beijinho e presente -->
+                <button class="btn" onclick="pergunta3Respondida('beijinho')">5 Beijinhos</button>
+                <button class="btn" onclick="pergunta3Respondida('presente')">Presente</button>
+            </div>
+        </div>
+        <!-- Pergunta 4 -->
+        <div id="pergunta4" style="display: none;">
+            <h2>Você prefere sair durante a semana ou no final de semana?</h2>
+            <div class="opcoes">
+                <!-- Botões para escolher entre semana e final de semana -->
+                <button class="btn" onclick="pergunta4Respondida('semana')">Durante a semana</button>
+                <button class="btn" onclick="pergunta4Respondida('final de semana')">Final de semana</button>
+            </div>
+        </div>
+        <!-- Pergunta Principal -->
+        <div id="perguntaPrincipal" style="display: none;">
+            <h2>Aceita ir em um date comigo?</h2>
+            <div class="opcoes">
+                <!-- Botões para responder SIM ou NÃO -->
+                <button id="btnSim" class="btn" onclick="sim()">SIM</button>
+                <button id="btnNao" class="btn" onmouseover="desvia(this)" onmouseleave="hideNao()">NÃO</button>
+            </div>
+        </div>
+    </div>
+    <!-- Div para conter o coração, presumivelmente para efeitos visuais -->
+    <div id="coracaoContainer"></div>
+    <!-- Links para arquivos JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Função para mover o botão "NÃO" para uma nova posição aleatória
+        function desvia(btn) {
+            var newPositionX = Math.random() * (window.innerWidth - 100);
+            var newPositionY = Math.random() * (window.innerHeight - 100);
+            btn.style.position = 'absolute'; // Define a posição absoluta para poder ajustar o top e left
+            btn.style.top = newPositionY + 'px'; // Define a nova posição vertical do botão
+            btn.style.left = newPositionX + 'px'; // Define a nova posição horizontal do botão
+        }
+    </script>
+</body>
+</html>
