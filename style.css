@@ -67,7 +67,7 @@ body {
     font-size: 800px; /* Reduzindo o tamanho do coração final */
     color: #c6304e; /* Vermelho mais intenso para transmitir paixão */
     position: relative; /* Posição relativa para a sobreposição da mensagem */
-    z-index: -1; /* Coloca o coração atrás do conteúdo de texto */
+    z-index: -1; /* Coloca o coração atrás do conteúdo de textoo */
     text-align: center;
 }
 
